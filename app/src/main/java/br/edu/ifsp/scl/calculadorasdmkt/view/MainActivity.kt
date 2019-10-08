@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.scl.calculadorasdmkt.R
 import br.edu.ifsp.scl.calculadorasdmkt.model.Configuracao
+import br.edu.ifsp.scl.calculadorasdmkt.model.StorageConfig
 import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : AppCompatActivity() {
@@ -62,6 +63,10 @@ class MainActivity : AppCompatActivity() {
             // Pegar a configuracao retornada
             val configuracao = data?.getParcelableExtra<Configuracao>(
                 ConfiguracaoActivity.Constantes.CONFIGURACAO)
+
+            val storageConfig = data?.getParcelableExtra<StorageConfig>(
+                ConfiguracaoActivity.Constantes.STORAGE_CONFIG
+            )
 
             if (configuracao!!.leiauteAvancado) {
                 supportFragmentManager.beginTransaction()
